@@ -25,13 +25,19 @@
 
 Designed with standard native Android Views for zero-stutter D-pad navigation:
 
-| Default TV View (Dynamic Sunset Wallpaper) | Solid Color Mode (Zero GPU Overdraw) |
+| Default TV View (Unsplash Sunset Wallpaper) | Solid Color Mode (Zero GPU Overdraw) |
 | :---: | :---: |
-| <img src="https://placehold.co/600x340/141b26/34a853?text=Clean+Launcher+Sunset+Home" alt="Clean Launcher Sunset Wallpaper" width="100%"/> | <img src="https://placehold.co/600x340/1c2430/38bdf8?text=Clean+Launcher+Solid+Mode" alt="Clean Launcher Solid Mode" width="100%"/> |
+| <img src="https://github.com/ajoykarmakar/tools/blob/main/UI/4.png?raw=true" alt="Clean Launcher Sunset Wallpaper" width="100%"/> | <img src="https://github.com/ajoykarmakar/tools/blob/main/UI/3.png?raw=true" alt="Clean Launcher Solid Mode" width="100%"/> |
 
 | Personalization Hub (Selection Styles & Unsplash) | Network & Internet Slide-out Drawer |
 | :---: | :---: |
-| <img src="https://placehold.co/600x340/121418/4ade80?text=Personalize+Launcher+Hub" alt="Personalize Launcher Hub" width="100%"/> | <img src="https://placehold.co/600x340/1a1f26/38bdf8?text=Network+and+Internet+Drawer" alt="Network and Internet Drawer" width="100%"/> |
+| <img src="https://github.com/ajoykarmakar/tools/blob/main/UI/1.png?raw=true" alt="Personalize Launcher Hub" width="100%"/> | <img src="https://github.com/ajoykarmakar/tools/blob/main/UI/2.png?raw=true" alt="Network and Internet Drawer" width="100%"/> |
+
+<div align="center">
+  <br>
+  <img src="https://github.com/ajoykarmakar/tools/blob/main/UI/5.png?raw=true" alt="Clean Launcher Full Showcase" width="90%"/>
+  <p><i>Clean Launcher in action on Android TV & Google TV</i></p>
+</div>
 
 ---
 
