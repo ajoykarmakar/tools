@@ -1,98 +1,1189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Player</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Metadata -->
+  <title>Clean Launcher for Android TV & Google TV | Fast, Bloat-Free ~2MB TV Home Screen</title>
+  <meta name="title" content="Clean Launcher for Android TV & Google TV | Fast, Bloat-Free ~2MB TV Home Screen">
+  <meta name="description" content="Download Clean Launcher APK for Android TV & Google TV. Zero bloatware, ~2MB footprint, instant AppCache memory, 60fps GPU D-pad focus, dynamic Live TV injection, and privacy-first local 7-day usage sorting.">
+  <meta name="keywords" content="Clean Launcher, Android TV launcher APK, Google TV launcher, lightweight TV launcher, ad-free Android TV, Xiaomi TV launcher, Chromecast with Google TV launcher, TCL Android TV launcher, TV home screen replacement, sideload TV launcher">
+  <meta name="author" content="Clean Launcher Team">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://yourusername.github.io/clean-launcher/">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourusername.github.io/clean-launcher/">
+  <meta property="og:title" content="Clean Launcher - Ultra-Fast, Bloat-Free Android TV Launcher">
+  <meta property="og:description" content="Tired of ads and lag on your TV? Experience an ultra-lightweight ~2MB home screen with native 60fps D-pad remote navigation.">
+  <meta property="og:image" content="https://placehold.co/1200x630/141b26/34a853?text=Clean+Launcher+Android+TV">
 
-body{
-    font-family:Arial, sans-serif;
-    background:#111;
-    color:#fff;
-}
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourusername.github.io/clean-launcher/">
+  <meta property="twitter:title" content="Clean Launcher for Android TV & Google TV (Free APK)">
+  <meta property="twitter:description" content="Zero bloatware, ~2MB size, native Live TV tuner integration, and 60fps remote navigation.">
+  <meta property="twitter:image" content="https://placehold.co/1200x630/141b26/34a853?text=Clean+Launcher+Android+TV">
 
-#formContainer{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    gap:10px;
-    padding:20px;
-}
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2334a853'><path d='M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm4 13h8v2H8v-2z'/></svg>">
 
-input{
-    width:400px;
-    max-width:70vw;
-    padding:12px;
-    font-size:16px;
-}
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              400: '#4ade80',
+              500: '#34a853',
+              600: '#2e8544',
+              accent: '#38bdf8'
+            },
+            tv: {
+              darkBg: '#121820',
+              solidBg: '#1c2430',
+              cardBg: '#212d3b',
+              cardBorder: '#2f3e50',
+              drawerBg: '#1d2228',
+              drawerItemHover: '#2b333c'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Roboto', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 
-button{
-    padding:12px 20px;
-    font-size:16px;
-    cursor:pointer;
-}
+  <!-- Structured Data JSON-LD for AI Search & Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Clean Launcher for Android TV",
+        "operatingSystem": "Android TV, Google TV, Android 7.0+",
+        "applicationCategory": "UtilitiesApplication",
+        "fileSize": "2.1MB",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Clean Launcher is an ultra-fast, bloatware-free, privacy-first home screen replacement built specifically for Android TV and Google TV devices.",
+        "softwareVersion": "1.0.0",
+        "downloadUrl": "https://github.com/yourusername/clean-launcher/releases",
+        "author": {
+          "@type": "Organization",
+          "name": "Clean Launcher Project"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Clean Launcher contain any sponsored ads or background tracking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Clean Launcher is 100% ad-free, telemetry-free, and contains zero bloatware. 7-day app sorting is calculated strictly on your TV locally using UsageStatsManager."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Clean Launcher support native Live TV channels?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. It inspects Android's TvContract API and includes a fallback scanner for over 15+ TV OEM packages (Xiaomi, Sony, TCL, Airtel, Samsung, etc.), injecting a native Live TV card directly into your grid."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the Unsplash wallpaper caching work without filling TV storage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Clean Launcher uses a strict Single Image Retention Policy. Fetching a new wallpaper immediately overwrites the existing cached file, preventing wallpaper storage from ever exceeding 1 to 2 MB."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
-#iframeContainer{
-    display:none;
-    position:fixed;
-    inset:0;
-    width:100%;
-    height:100%;
-    background:#000;
-}
-
-iframe{
-    width:100%;
-    height:100%;
-    border:none;
-}
-</style>
-</head>
-
-<body>
-
-<div id="formContainer">
-    <input
-        type="text"
-        id="imdbUrl"
-        placeholder="Paste IMDb URL">
-    <button onclick="loadMovie()">Submit</button>
-</div>
-
-<div id="iframeContainer">
-    <iframe id="movieFrame" allowfullscreen></iframe>
-</div>
-
-<script>
-function loadMovie() {
-    const url = document.getElementById("imdbUrl").value.trim();
-
-    const match = url.match(/tt\d+/);
-
-    if (!match) {
-        alert("Invalid IMDb URL");
-        return;
+  <style>
+    /* TV Focused Remote Styles matching screenshot highlights */
+    .tv-focus-outline {
+      outline: 2.5px solid #ffffff !important;
+      outline-offset: 1px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+      transform: translateY(-2px);
+    }
+    .tv-focus-zoom {
+      transform: scale(1.08) translateY(-2px) !important;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7) !important;
+      outline: 2px solid rgba(255, 255, 255, 0.4) !important;
     }
 
-    const imdbId = match[0];
+    /* Sunset Wallpaper Background */
+    .bg-tv-sunset {
+      background: linear-gradient(180deg, rgba(82, 38, 59, 0.45) 0%, rgba(35, 34, 66, 0.7) 40%, rgba(18, 24, 38, 0.95) 100%),
+                  radial-gradient(ellipse at 80% 20%, rgba(249, 115, 22, 0.45) 0%, rgba(147, 51, 234, 0.3) 45%, rgba(15, 23, 42, 0.9) 100%),
+                  #1d2433;
+      background-size: cover;
+      background-position: center;
+    }
 
-    const embedUrl =
-        `https://proxy.garageband.rocks/embed/movie/${imdbId}`;
+    /* Solid Color Mode Background */
+    .bg-tv-solid {
+      background: radial-gradient(circle at 50% 20%, #202b39 0%, #151d27 100%);
+    }
 
-    document.getElementById("movieFrame").src = embedUrl;
+    /* Smooth Custom Scrollbar */
+    .custom-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
 
-    document.getElementById("formContainer").style.display = "none";
-    document.getElementById("iframeContainer").style.display = "block";
-}
-</script>
+<body class="bg-[#0b0f17] text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white custom-scroll overflow-x-hidden">
 
+  <!-- Top Sticky Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0d131d]/90 border-b border-slate-800/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <rect x="2" y="7" width="20" height="15" rx="3" stroke-width="2"/>
+            <polyline points="17 2 12 7 7 2" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="font-bold text-lg tracking-tight text-white flex items-center gap-1.5">
+          Clean<span class="text-brand-400">Launcher</span>
+          <span class="text-[10px] font-semibold uppercase tracking-wider bg-brand-500/20 text-brand-400 px-2 py-0.5 rounded-full border border-brand-500/30">Android TV</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+        <a href="#interactive-demo" class="hover:text-brand-400 transition-colors">Interactive TV Demo</a>
+        <a href="#features" class="hover:text-brand-400 transition-colors">Core Features</a>
+        <a href="#sideload-guide" class="hover:text-brand-400 transition-colors">Sideload Guide</a>
+        <a href="#other-tools" class="hover:text-brand-400 transition-colors">Other Tools</a>
+        <a href="#faq" class="hover:text-brand-400 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/yourusername/clean-launcher" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center text-xs font-semibold px-3 py-2 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-200 hover:text-white hover:border-slate-500 transition">
+          <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <a href="#download" class="inline-flex items-center justify-center text-xs sm:text-sm font-semibold px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 text-white transition shadow-lg shadow-brand-500/25">
+          <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Download APK (2.1MB)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative pt-12 pb-14 md:pt-16 md:pb-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Top Pill Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-brand-500/30 text-xs text-slate-300 mb-6 backdrop-blur">
+          <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
+          <span class="font-medium text-brand-300">Clean Launcher v1.0.0</span>
+          <span class="text-slate-600">•</span>
+          <span class="text-slate-300">Zero Bloatware • ~2.1MB Size • Ad-Free</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.18] max-w-4xl mx-auto">
+          The Clean, Ultra-Fast <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-sky-400">Android TV Launcher</span> Built for Real Performance.
+        </h1>
+
+        <p class="mt-5 text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          Replaces bloated, ad-cluttered TV home screens with an ultra-lightweight ~2MB native launcher. Hardware-accelerated 60fps focus, instant memory caching, and native Live TV integration.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a id="download" href="https://github.com/yourusername/clean-launcher/releases" class="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-500 to-emerald-600 hover:from-brand-600 hover:to-emerald-700 text-white font-bold shadow-xl shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Download Clean Launcher APK</span>
+            <span class="text-xs bg-black/20 text-white px-2 py-0.5 rounded font-mono">v1.0</span>
+          </a>
+
+          <button onclick="copyDirectApkLink()" class="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 hover:text-white hover:border-slate-500 hover:bg-slate-800 transition font-medium text-sm">
+            <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            <span id="copyButtonText">Copy Direct Download URL</span>
+          </button>
+        </div>
+
+        <!-- Quick Spec Counters -->
+        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto pt-6 border-t border-slate-800/80 text-slate-400">
+          <div>
+            <div class="text-xl sm:text-2xl font-bold text-white font-mono">~2.1 MB</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">App Package Size</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold text-emerald-400 font-mono">60 FPS</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">GPU .withLayer() Focus</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold text-white font-mono">0 Ads</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Zero Telemetry & Tracking</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold text-sky-400 font-mono">100% Local</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">UsageStats 7-Day Sort</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interactive-demo" class="py-10 bg-slate-950/70 border-y border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Controls & State Bar above TV -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+          <div>
+            <div class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full mb-1">
+              Exact TV UI Emulator
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Live Android TV Interface</h2>
+            <p class="text-xs sm:text-sm text-slate-400">Test real remote D-pad navigation, theme switching, and system settings drawers.</p>
+          </div>
+
+          <!-- Switch TV Views manually -->
+          <div class="flex items-center gap-2 bg-slate-900 border border-slate-800 p-1.5 rounded-2xl">
+            <button onclick="switchTvScreen('home')" id="navBtnHome" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-brand-500 text-white transition">
+              Home Screen
+            </button>
+            <button onclick="switchTvScreen('personalize')" id="navBtnPersonalize" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
+              Personalize
+            </button>
+            <button onclick="toggleDrawer()" id="navBtnDrawer" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">
+              Network Drawer
+            </button>
+          </div>
+        </div>
+
+        <!-- TV Bezel Frame -->
+        <div class="relative mx-auto rounded-3xl p-3 sm:p-5 bg-gradient-to-b from-[#263140] via-[#161e29] to-[#0d121a] border-4 border-[#324154] shadow-2xl shadow-black/80 max-w-5xl">
+          
+          <!-- TV Sensor Light -->
+          <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-14 h-2.5 bg-[#2b3747] rounded-b-lg flex items-center justify-center">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          </div>
+
+          <!-- Inside TV Screen (16:9 aspect container) -->
+          <div id="tvContainer" class="relative rounded-2xl overflow-hidden bg-tv-sunset min-h-[460px] sm:min-h-[500px] flex flex-col justify-between border border-slate-700/60 shadow-inner select-none transition-all duration-300">
+
+            <!-- ================= VIEW 1: HOME SCREEN ================= -->
+            <div id="tvHomeScreen" class="p-6 sm:p-8 flex flex-col justify-between h-full min-h-[460px] sm:min-h-[500px] relative z-10">
+              
+              <!-- EXACT SCREENSHOT HEADER BAR -->
+              <div class="flex items-center justify-between">
+                <!-- Left: Network status pill & Personalize pill button -->
+                <div class="flex items-center gap-3.5">
+                  <!-- Network Pill -->
+                  <div onclick="toggleDrawer()" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b2330]/75 hover:bg-[#253245] border border-slate-600/50 cursor-pointer text-slate-200 text-xs sm:text-sm font-medium transition" title="Click to open Network Drawer">
+                    <!-- Wi-Fi / Ethernet Icon -->
+                    <svg class="w-4 h-4 text-slate-200" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.32c3.7 0 7.07 1.45 9.58 3.82L12 18.77 2.42 11.14C4.93 8.77 8.3 7.32 12 7.32z"/>
+                    </svg>
+                    <!-- Green Dot -->
+                    <span id="tvHeaderDot" class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]"></span>
+                    <span id="tvHeaderNetName" class="text-xs sm:text-sm text-slate-200 font-normal">Wired Connection</span>
+                  </div>
+
+                  <!-- Personalize Launcher Pill Button with White Outline Focus -->
+                  <button id="btnPersonalizePill" onclick="switchTvScreen('personalize')" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#202a38]/85 text-white text-xs sm:text-sm font-medium border-2 border-white shadow-lg transition transform hover:scale-105" title="Click to open Personalize Settings">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <span>Personalize</span>
+                  </button>
+                </div>
+
+                <!-- Right: Clean Digital Clock matching screenshot format -->
+                <div class="text-right text-slate-300 font-sans text-xs sm:text-sm font-normal">
+                  <span id="tvHeaderTime">1:18 PM</span>
+                  <span class="mx-1 text-slate-500">|</span>
+                  <span id="tvHeaderDate">Tuesday, Sep 22, 2026</span>
+                </div>
+              </div>
+
+              <!-- EXACT SCREENSHOT APP GRID HIERARCHY -->
+              <div class="my-auto pt-6 pb-2">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-4xl" id="tvAppsContainer">
+                  
+                  <!-- Tile 1: Settings -->
+                  <div tabindex="0" class="tv-tile group relative rounded-xl px-4 py-3.5 bg-[#212d3b]/90 border border-slate-700/60 cursor-pointer flex items-center gap-3.5 transition-all duration-150 tv-focus-outline">
+                    <div class="w-10 h-10 rounded-lg bg-[#293647] flex items-center justify-center shrink-0">
+                      <svg class="w-6 h-6 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <span class="text-sm font-semibold text-white tracking-wide">Settings</span>
+                  </div>
+
+                  <!-- Tile 2: Play Store -->
+                  <div tabindex="0" class="tv-tile group relative rounded-xl px-4 py-3.5 bg-[#212d3b]/90 border border-slate-700/60 cursor-pointer flex items-center gap-3.5 transition-all duration-150">
+                    <div class="w-10 h-10 rounded-lg bg-transparent flex items-center justify-center shrink-0">
+                      <svg class="w-7 h-7" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M3.6 1.5C3.3 1.9 3.1 2.5 3.1 3.2v17.6c0 .7.2 1.3.5 1.7l.1.1 9.9-9.9v-.2L3.6 1.5z"/>
+                        <path fill="#FBBC04" d="M16.9 15.9l-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-4 2.3z"/>
+                        <path fill="#EA4335" d="M13.6 12.5L3.6 22.5c.4.4 1 .5 1.7.1l11.7-6.7-3.4-3.4z"/>
+                        <path fill="#34A853" d="M13.6 12.5l3.4-3.4L5.3 2.4C4.6 2 4 2.1 3.6 2.5l10 10z"/>
+                      </svg>
+                    </div>
+                    <span class="text-sm font-semibold text-white tracking-wide">Play Store</span>
+                  </div>
+
+                  <!-- Tile 3: YouTube -->
+                  <div tabindex="0" class="tv-tile group relative rounded-xl px-4 py-3.5 bg-[#212d3b]/90 border border-slate-700/60 cursor-pointer flex items-center gap-3.5 transition-all duration-150">
+                    <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm">
+                      <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                      </svg>
+                    </div>
+                    <span class="text-sm font-semibold text-white tracking-wide">YouTube</span>
+                  </div>
+
+                  <!-- Tile 4: Play Games -->
+                  <div tabindex="0" class="tv-tile group relative rounded-xl px-4 py-3.5 bg-[#212d3b]/90 border border-slate-700/60 cursor-pointer flex items-center gap-3.5 transition-all duration-150">
+                    <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm">
+                      <svg class="w-6 h-6 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M21.58 10.42l-4.5-7.79a2.5 2.5 0 00-3.41-.92L2.42 8.21a2.5 2.5 0 00-.92 3.42l4.5 7.79a2.5 2.5 0 003.41.92l11.25-6.5a2.5 2.5 0 00.92-3.42zM10.5 13.5H9v1.5H7.5V13.5H6V12h1.5v-1.5H9V12h1.5v1.5zm5.5 1a1 1 0 110-2 1 1 0 010 2zm2-3a1 1 0 110-2 1 1 0 010 2z"/></svg>
+                    </div>
+                    <span class="text-sm font-semibold text-white tracking-wide">Play Games</span>
+                  </div>
+
+                  <!-- Tile 5: YouTube Music -->
+                  <div tabindex="0" class="tv-tile group relative rounded-xl px-4 py-3.5 bg-[#212d3b]/90 border border-slate-700/60 cursor-pointer flex items-center gap-3.5 transition-all duration-150">
+                    <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm">
+                      <div class="w-7 h-7 rounded-full bg-red-600 flex items-center justify-center">
+                        <svg class="w-3.5 h-3.5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      </div>
+                    </div>
+                    <span class="text-sm font-semibold text-white tracking-wide">YouTube Music</span>
+                  </div>
+
+                  <!-- Tile 6: Live TV (OEM Injected) -->
+                  <div tabindex="0" class="tv-tile group relative rounded-xl px-4 py-3.5 bg-[#212d3b]/90 border border-slate-700/60 cursor-pointer flex items-center gap-3.5 transition-all duration-150">
+                    <div class="w-10 h-10 rounded-lg bg-transparent flex items-center justify-center shrink-0">
+                      <svg class="w-7 h-7 text-slate-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke-width="2"/><line x1="12" y1="19" x2="12" y2="21" stroke-width="2"/></svg>
+                    </div>
+                    <span class="text-sm font-semibold text-white tracking-wide">Live TV</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Footer Helper text -->
+              <div class="text-[11px] text-slate-400/80 flex items-center justify-between border-t border-white/10 pt-3">
+                <span>D-Pad / Arrow keys supported. Press <kbd class="px-1.5 py-0.5 rounded bg-black/40 text-slate-300">Enter</kbd> to launch app.</span>
+                <span class="text-brand-400">Memory AppCache: Ready (0ms reload)</span>
+              </div>
+            </div>
+
+            <!-- ================= VIEW 2: PERSONALIZE LAUNCHER SCREEN (Exact Screenshot 1) ================= -->
+            <div id="tvPersonalizeScreen" class="hidden p-6 sm:p-8 flex flex-col justify-start h-full min-h-[460px] sm:min-h-[500px] bg-[#121418] relative z-20 overflow-y-auto custom-scroll text-left">
+              
+              <!-- Top bar with Back Arrow -->
+              <div class="flex items-center gap-4 mb-6">
+                <button onclick="switchTvScreen('home')" class="w-9 h-9 rounded-full bg-slate-800/80 hover:bg-slate-700 flex items-center justify-center text-white transition">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                </button>
+                <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Personalize Launcher</h2>
+              </div>
+
+              <!-- Background Style Section -->
+              <div class="mb-6">
+                <h3 class="text-sm font-medium text-slate-400 mb-3">Background Style</h3>
+                <div class="flex items-center gap-8 mb-4">
+                  <!-- Radio: Solid Color -->
+                  <label class="flex items-center gap-2.5 cursor-pointer">
+                    <input type="radio" name="bgStyleRadio" value="solid" onchange="changeBgMode('solid')" class="sr-only peer">
+                    <span class="w-5 h-5 rounded-full border-2 border-slate-500 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/20 flex items-center justify-center transition">
+                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 opacity-0 peer-checked:opacity-100"></span>
+                    </span>
+                    <span class="text-sm text-slate-200">Solid Color</span>
+                  </label>
+
+                  <!-- Radio: Unsplash Image -->
+                  <label class="flex items-center gap-2.5 cursor-pointer">
+                    <input type="radio" name="bgStyleRadio" value="unsplash" checked onchange="changeBgMode('unsplash')" class="sr-only peer">
+                    <span class="w-5 h-5 rounded-full border-2 border-emerald-500 bg-emerald-500/20 flex items-center justify-center transition">
+                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                    </span>
+                    <span class="text-sm text-slate-200">Unsplash Image</span>
+                  </label>
+                </div>
+
+                <!-- Preview Thumbnail (Exact Sunset Waterfront Bridge) -->
+                <div id="wallpaperPreviewContainer" class="mb-4">
+                  <div class="w-44 h-24 rounded-lg overflow-hidden border border-slate-700 shadow-md relative bg-tv-sunset">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                </div>
+
+                <!-- Fetch New Image Button (Exact Green Style #34a853) -->
+                <button id="btnFetchWallpaper" onclick="fetchNewWallpaperSimulated()" class="px-5 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm shadow-md transition-all active:scale-95">
+                  Fetch New Image
+                </button>
+
+                <!-- Exact Amber Warning / Notice Text -->
+                <p class="mt-3 text-xs text-amber-500/90 leading-relaxed max-w-xl">
+                  Please note: Choosing a new image will replace your current one with a surprise picture picked just for you! To keep everything running smoothly, please give the button a moment to load before clicking again. Clicking rapidly might temporarily disable the button to prevent errors.
+                </p>
+              </div>
+
+              <!-- Selection Style Section -->
+              <div class="mt-2 pt-4 border-t border-slate-800">
+                <h3 class="text-sm font-medium text-slate-400 mb-3">Selection Style</h3>
+                <div class="flex items-center gap-8">
+                  <!-- Radio: Classic Zoom -->
+                  <label class="flex items-center gap-2.5 cursor-pointer">
+                    <input type="radio" name="selectionStyleRadio" value="zoom" onchange="changeSelectionStyle('zoom')" class="sr-only peer">
+                    <span id="radioZoomCircle" class="w-5 h-5 rounded-full border-2 border-slate-500 flex items-center justify-center transition">
+                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 opacity-0"></span>
+                    </span>
+                    <span class="text-sm text-slate-200">Classic Zoom</span>
+                  </label>
+
+                  <!-- Radio: Border Outline -->
+                  <label class="flex items-center gap-2.5 cursor-pointer">
+                    <input type="radio" name="selectionStyleRadio" value="outline" checked onchange="changeSelectionStyle('outline')" class="sr-only peer">
+                    <span id="radioOutlineCircle" class="w-5 h-5 rounded-full border-2 border-emerald-500 bg-emerald-500/20 flex items-center justify-center transition">
+                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 opacity-100"></span>
+                    </span>
+                    <span class="text-sm text-slate-200">Border Outline</span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ================= VIEW 3: NETWORK & INTERNET DRAWER (Exact Screenshot 2) ================= -->
+            <div id="tvNetworkDrawer" class="absolute top-0 right-0 bottom-0 w-80 sm:w-96 bg-[#1a1f26] border-l border-slate-700/80 shadow-2xl z-30 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 text-left">
+              
+              <div>
+                <!-- Drawer Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
+                  <h3 class="text-xl font-bold text-white">Network & Internet</h3>
+                  <button onclick="toggleDrawer()" class="text-slate-400 hover:text-white p-1">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                  </button>
+                </div>
+
+                <!-- Wi-Fi Toggle Item -->
+                <div class="py-3 px-3 rounded-xl bg-slate-800/40 flex items-center justify-between mb-4">
+                  <div>
+                    <div class="text-sm font-semibold text-white">Wi-Fi</div>
+                    <div class="text-[11px] text-slate-400">Unplug Ethernet to use Wi-Fi</div>
+                  </div>
+                  <!-- Blue Android Toggle (active) -->
+                  <button onclick="toggleSimWifi()" id="btnWifiToggle" class="w-11 h-6 rounded-full bg-sky-500 p-0.5 transition-colors duration-200 relative flex items-center justify-end pr-1">
+                    <span class="w-4 h-4 rounded-full bg-white shadow-md transform"></span>
+                  </button>
+                </div>
+
+                <!-- Other Options subheader -->
+                <div class="text-xs font-semibold text-sky-400 mb-3">Other options</div>
+
+                <!-- Scanning always available toggle -->
+                <div class="py-2.5 flex items-start justify-between mb-3">
+                  <div class="pr-2">
+                    <div class="text-xs font-medium text-white">Scanning always available</div>
+                    <div class="text-[10px] text-slate-400 mt-0.5">Let Google's location service and other apps scan for networks, even when Wi-Fi is off</div>
+                  </div>
+                  <!-- Gray Off Toggle -->
+                  <div class="w-10 h-5 rounded-full bg-slate-700 p-0.5 relative shrink-0">
+                    <span class="w-4 h-4 rounded-full bg-slate-400"></span>
+                  </div>
+                </div>
+
+                <!-- Thread network toggle -->
+                <div class="py-2.5 flex items-center justify-between mb-4">
+                  <span class="text-xs font-medium text-white">Thread network</span>
+                  <div class="w-10 h-5 rounded-full bg-sky-500 p-0.5 relative flex items-center justify-end pr-0.5">
+                    <span class="w-4 h-4 rounded-full bg-white"></span>
+                  </div>
+                </div>
+
+                <!-- Ethernet subheader -->
+                <div class="text-xs font-semibold text-sky-400 mb-2">Ethernet</div>
+
+                <!-- Connected IP addresses matching screenshot 2 -->
+                <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-800 text-[11px] font-mono text-slate-300 space-y-1 mb-4">
+                  <div class="text-xs font-bold text-emerald-400 font-sans mb-1">Connected</div>
+                  <div>fe80::c91c:52cc:9079:f5f7</div>
+                  <div>fec0::bb41:6a79:da88:c924</div>
+                  <div>fec0::816f:ce86:ceff:97cb</div>
+                  <div class="text-white font-bold">10.0.2.15</div>
+                </div>
+
+                <div class="text-xs text-slate-300 py-1 cursor-pointer hover:text-white">
+                  Proxy settings
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-slate-800 text-right">
+                <button onclick="toggleDrawer()" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
+                  Close Settings
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Emulator Interactive Legend & Hotkeys -->
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-5 text-xs text-slate-400">
+          <span class="flex items-center gap-1.5"><kbd class="px-2 py-0.5 bg-slate-900 border border-slate-700 rounded text-slate-200 font-mono">←</kbd> <kbd class="px-2 py-0.5 bg-slate-900 border border-slate-700 rounded text-slate-200 font-mono">→</kbd> <kbd class="px-2 py-0.5 bg-slate-900 border border-slate-700 rounded text-slate-200 font-mono">↑</kbd> <kbd class="px-2 py-0.5 bg-slate-900 border border-slate-700 rounded text-slate-200 font-mono">↓</kbd> D-Pad Navigation</span>
+          <span class="flex items-center gap-1.5"><kbd class="px-2 py-0.5 bg-slate-900 border border-slate-700 rounded text-slate-200 font-mono">Enter</kbd> Launch Tile</span>
+          <span class="text-slate-600">•</span>
+          <span>Click any card or the top pill badges to test UI interactions</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="features" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Designed for Hardware Efficiency</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white">Why Clean Launcher Outperforms System Defaults</p>
+        <p class="text-slate-400 mt-3 text-base">Standard Google TV and Android TV home screens allocate 60MB+ to ad renderers, sponsored rows, and analytics services. Clean Launcher removes every layer of waste.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="bg-[#121924] border border-slate-800 rounded-2xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">60fps D-Pad Hardware Focus</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Navigating with a television remote uses <code class="text-xs bg-slate-900 px-1.5 py-0.5 rounded text-emerald-400">.withLayer()</code> GPU texture baking. This bypasses view tree invalidations, guaranteeing steady 60fps animations even on 1GB streaming sticks.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-3">
+              <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> No micro-stutters when holding arrows</li>
+              <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> Instant AppCache memory retrieval</li>
+            </ul>
+          </div>
+          <div class="mt-6 text-[11px] font-mono text-emerald-400 uppercase tracking-wider">GPU Accelerated</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-[#121924] border border-slate-800 rounded-2xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">UsageStatsManager 7-Day Sorting</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Querying Android's native <code class="text-xs bg-slate-900 px-1.5 py-0.5 rounded text-sky-400">UsageStatsManager</code> orders your most-watched streaming channels to the front of the grid automatically.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-3">
+              <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> 100% processed on-device (zero telemetry)</li>
+              <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Dynamic 4-col (720p) to 6-col (4K) scaling</li>
+            </ul>
+          </div>
+          <div class="mt-6 text-[11px] font-mono text-sky-400 uppercase tracking-wider">Privacy-Preserving</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-[#121924] border border-slate-800 rounded-2xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke-width="2"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Native Live TV Tuner Injection</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Scans for OEM tuner capabilities using Android's <code class="text-xs bg-slate-900 px-1.5 py-0.5 rounded text-purple-400">TvContract</code> API and 15+ OEM fallback packages (Sony, TCL, Xiaomi, Samsung, Airtel).
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-3">
+              <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Injects direct cable/antenna TV tile</li>
+              <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Zero third-party bridge apps needed</li>
+            </ul>
+          </div>
+          <div class="mt-6 text-[11px] font-mono text-purple-400 uppercase tracking-wider">OEM Compatible</div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-[#121924] border border-slate-800 rounded-2xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">1-Image Unsplash Retention</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Never fills your TV storage. New Unsplash wallpapers overwrite previous cached files immediately with a 3-second debounce cooldown.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-3">
+              <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> Guaranteed &lt; 2MB total wallpaper cache</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> Zero GPU overdraw in Solid Color mode</li>
+            </ul>
+          </div>
+          <div class="mt-6 text-[11px] font-mono text-amber-400 uppercase tracking-wider">Storage Protected</div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-[#121924] border border-slate-800 rounded-2xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Transparent Privacy & Onboarding</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              A gentle 3-step sequential onboarding dialog clearly explains why permissions (Default Launcher, Usage Stats, and Wi-Fi SSID) are needed.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-3">
+              <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> Mobile detection & TV sideload tutorial</li>
+              <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> One-click exit ramp to Android settings</li>
+            </ul>
+          </div>
+          <div class="mt-6 text-[11px] font-mono text-emerald-400 uppercase tracking-wider">Honest Permissions</div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-[#121924] border border-slate-800 rounded-2xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">~2.1 MB Minified Package</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Built with zero third-party bloated design libraries. By using pure Android Views, the resulting APK is tiny, ultra-lightweight, and loads instantly.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-3">
+              <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> No background services hogging RAM</li>
+              <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> Ideal for legacy 1GB / 2GB devices</li>
+            </ul>
+          </div>
+          <div class="mt-6 text-[11px] font-mono text-teal-400 uppercase tracking-wider">Pure Native Code</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="sideload-guide" class="py-16 bg-slate-950/70 border-t border-slate-800/80">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full mb-2">
+            Installation Walkthrough
+          </div>
+          <h2 class="text-3xl font-extrabold text-white">How to Install on Android TV & Google TV</h2>
+          <p class="text-slate-400 text-sm mt-2">You can sideload the APK onto your television in less than 3 minutes.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Step 1 -->
+          <div class="bg-[#121822] border border-slate-800 rounded-2xl p-6">
+            <div class="w-8 h-8 rounded-full bg-brand-500/20 text-brand-400 font-mono font-bold flex items-center justify-center text-sm mb-4 border border-brand-500/30">
+              01
+            </div>
+            <h3 class="text-white font-bold text-base mb-2">Install Downloader App</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Open the Google Play Store on your TV and install <strong>"Downloader by AFTVnews"</strong> or <strong>"Send Files to TV"</strong>.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-[#121822] border border-slate-800 rounded-2xl p-6">
+            <div class="w-8 h-8 rounded-full bg-brand-500/20 text-brand-400 font-mono font-bold flex items-center justify-center text-sm mb-4 border border-brand-500/30">
+              02
+            </div>
+            <h3 class="text-white font-bold text-base mb-2">Enter Download URL</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mb-3">
+              Type the direct link or shortcode into Downloader's URL bar, or transfer the APK from your phone/laptop over Wi-Fi.
+            </p>
+            <div class="bg-black/50 p-2 rounded-lg border border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-300">
+              <span class="truncate">tinyurl.com/clean-tv</span>
+              <button onclick="copyDownloaderUrl()" class="text-brand-400 hover:text-brand-300 ml-2">Copy</button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-[#121822] border border-slate-800 rounded-2xl p-6">
+            <div class="w-8 h-8 rounded-full bg-brand-500/20 text-brand-400 font-mono font-bold flex items-center justify-center text-sm mb-4 border border-brand-500/30">
+              03
+            </div>
+            <h3 class="text-white font-bold text-base mb-2">Set as Default Launcher</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Allow "Unknown Sources" if prompted, then hit your remote's <strong>Home</strong> button. Select <strong>Clean Launcher</strong> and press <em>"Always"</em>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Checksum Verification Box -->
+        <div class="mt-8 bg-[#121822] border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs font-semibold text-white">Official APK SHA-256 Checksum</div>
+              <div class="text-[11px] font-mono text-slate-400 truncate max-w-xs sm:max-w-md" id="sha256Text">
+                a1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef0
+              </div>
+            </div>
+          </div>
+          <button onclick="copyChecksum()" class="text-xs px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-200 transition">
+            Copy Checksum
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="other-tools" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full mb-2">
+            Developer Ecosystem
+          </div>
+          <h2 class="text-3xl font-extrabold text-white">More Lightweight Tools & Apps</h2>
+          <p class="text-slate-400 text-sm mt-1 max-w-xl">
+            Check out my other open-source developer utilities, TV accessories, and privacy-respecting projects.
+          </p>
+        </div>
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="mt-4 md:mt-0 inline-flex items-center text-xs font-semibold text-brand-400 hover:text-brand-300">
+          View all on GitHub <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Tools Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Tool 1 -->
+        <article class="bg-[#121822] border border-slate-800 rounded-2xl p-6 hover:border-slate-600 transition flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-brand-500/20 text-brand-300 border border-brand-500/30">Android Companion</span>
+              <span class="text-xs text-slate-500 font-mono">v1.2</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">ADB QuickConnect TV</h3>
+            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+              Desktop companion to wirelessly pair and install apps to any Android TV device without connecting USB cables.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+            <a href="https://github.com/yourusername/adb-quickconnect" target="_blank" rel="noopener" class="text-xs text-slate-300 hover:text-white flex items-center gap-1">
+              <span>View Repository</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <span class="text-[11px] text-slate-500 font-mono">MIT</span>
+          </div>
+        </article>
+
+        <!-- Tool 2 -->
+        <article class="bg-[#121822] border border-slate-800 rounded-2xl p-6 hover:border-slate-600 transition flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">Web Utility</span>
+              <span class="text-xs text-slate-500 font-mono">Live</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">TV Remote Keycode Tester</h3>
+            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+              Browser-based keycode diagnostics tool for Bluetooth game controllers, HDMI-CEC remotes, and air-mouse peripherals.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+            <a href="https://yourusername.github.io/tv-keymapper" target="_blank" rel="noopener" class="text-xs text-slate-300 hover:text-white flex items-center gap-1">
+              <span>Open Tool</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <span class="text-[11px] text-slate-500 font-mono">Apache 2.0</span>
+          </div>
+        </article>
+
+        <!-- Tool 3 -->
+        <article class="bg-[#121822] border border-slate-800 rounded-2xl p-6 hover:border-slate-600 transition flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">CLI Tool</span>
+              <span class="text-xs text-slate-500 font-mono">v0.8</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">LeanAPK Compressor</h3>
+            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+              Automated build script that optimizes Android TV APKs by stripping unnecessary localization bundles and heavy vector assets.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+            <a href="https://github.com/yourusername/leanapk-compressor" target="_blank" rel="noopener" class="text-xs text-slate-300 hover:text-white flex items-center gap-1">
+              <span>View Repository</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <span class="text-[11px] text-slate-500 font-mono">GPLv3</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="faq" class="py-16 bg-slate-950/70 border-t border-slate-800/80">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full mb-2">
+            Questions & Answers
+          </div>
+          <h2 class="text-3xl font-extrabold text-white">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="bg-[#121822] border border-slate-800 rounded-xl p-5">
+            <h3 class="font-bold text-white text-base">Does Clean Launcher support Chromecast with Google TV and Fire TV sticks?</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Yes. Clean Launcher runs on any device powered by Android TV OS (Android 7.0 and up), including Google TV Chromecast, Xiaomi Mi Box, Sony Bravia, TCL, Philips, and Amazon Fire OS devices via standard sideloading.
+            </p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-[#121822] border border-slate-800 rounded-xl p-5">
+            <h3 class="font-bold text-white text-base">How does Clean Launcher keep its file size down to ~2MB?</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              By removing third-party telemetry, ad frameworks, and heavy Material components. Everything is built with standard native Android Views and hardware-accelerated GPU textures.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-[#121822] border border-slate-800 rounded-xl p-5">
+            <h3 class="font-bold text-white text-base">Can I switch back to my TV's original default launcher anytime?</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Yes. Clean Launcher includes an educational 3-step onboarding flow and a direct "Exit Launcher" button that immediately routes you back to your TV's Default Apps settings. You are never locked in.
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-[#121822] border border-slate-800 rounded-xl p-5">
+            <h3 class="font-bold text-white text-base">Why does Clean Launcher need Usage Access and Location permissions?</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Usage Access allows the launcher to calculate your 7-day most-used streaming apps and sort them to the front. Location permission is required by Android to read your active Wi-Fi SSID name. No information ever leaves your device.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="py-16 text-center max-w-4xl mx-auto px-4">
+      <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#18212e] to-[#0f151e] border border-brand-500/30 shadow-2xl relative overflow-hidden">
+        <div class="relative z-10">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Give Your Television Its Speed Back</h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-3 max-w-lg mx-auto">
+            Enjoy clean, 60fps remote navigation with zero advertising banners. Download the lightweight APK today.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a href="https://github.com/yourusername/clean-launcher/releases" class="px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold transition shadow-lg shadow-brand-500/30">
+              Download Latest APK (Free)
+            </a>
+            <a href="https://github.com/yourusername/clean-launcher" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-white font-medium transition">
+              View on GitHub ★
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800/80 bg-[#080c12] py-12 text-slate-500 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-3">
+        <div class="w-6 h-6 rounded-lg bg-brand-500 flex items-center justify-center text-white font-bold text-xs">CL</div>
+        <span>Clean Launcher Project • Built for Android TV™ & Google TV™</span>
+      </div>
+      <div>
+        <span>Android and Google TV are registered trademarks of Google LLC. Clean Launcher is an independent open-source tool.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Box -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-brand-500 text-white font-semibold text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 pointer-events-none">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <span id="toastMsg">Action completed!</span>
+  </div>
+
+  <script>
+    // State Variables
+    let currentScreen = 'home'; // 'home' | 'personalize'
+    let currentSelectionStyle = 'outline'; // 'outline' | 'zoom'
+    let currentBgMode = 'unsplash'; // 'unsplash' | 'solid'
+    let drawerOpen = false;
+    let wifiEnabled = true;
+
+    // Simulated Wallpapers (including sunset waterfront bridge)
+    const wallpapers = [
+      'linear-gradient(180deg, rgba(82, 38, 59, 0.45) 0%, rgba(35, 34, 66, 0.7) 40%, rgba(18, 24, 38, 0.95) 100%), radial-gradient(ellipse at 80% 20%, rgba(249, 115, 22, 0.45) 0%, rgba(147, 51, 234, 0.3) 45%, rgba(15, 23, 42, 0.9) 100%), #1d2433',
+      'linear-gradient(180deg, rgba(20, 50, 75, 0.5) 0%, rgba(10, 25, 45, 0.9) 100%), radial-gradient(ellipse at 30% 20%, rgba(56, 189, 248, 0.35) 0%, rgba(15, 23, 42, 0.9) 100%), #0f172a',
+      'linear-gradient(180deg, rgba(40, 25, 60, 0.5) 0%, rgba(15, 10, 25, 0.9) 100%), radial-gradient(ellipse at 70% 30%, rgba(192, 132, 252, 0.35) 0%, rgba(15, 23, 42, 0.9) 100%), #181124'
+    ];
+    let wallpaperIdx = 0;
+
+    // Screen Switching
+    function switchTvScreen(screen) {
+      currentScreen = screen;
+      const home = document.getElementById('tvHomeScreen');
+      const personalize = document.getElementById('tvPersonalizeScreen');
+      const navBtnHome = document.getElementById('navBtnHome');
+      const navBtnPersonalize = document.getElementById('navBtnPersonalize');
+
+      if (screen === 'personalize') {
+        home.classList.add('hidden');
+        personalize.classList.remove('hidden');
+        navBtnPersonalize.className = "px-3 py-1.5 rounded-xl text-xs font-semibold bg-brand-500 text-white transition";
+        navBtnHome.className = "px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition";
+        if (drawerOpen) toggleDrawer();
+      } else {
+        personalize.classList.add('hidden');
+        home.classList.remove('hidden');
+        navBtnHome.className = "px-3 py-1.5 rounded-xl text-xs font-semibold bg-brand-500 text-white transition";
+        navBtnPersonalize.className = "px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition";
+      }
+    }
+
+    // Toggle Network Drawer (Screenshot 2)
+    function toggleDrawer() {
+      drawerOpen = !drawerOpen;
+      const drawer = document.getElementById('tvNetworkDrawer');
+      const navBtnDrawer = document.getElementById('navBtnDrawer');
+      if (drawerOpen) {
+        drawer.classList.remove('translate-x-full');
+        navBtnDrawer.className = "px-3 py-1.5 rounded-xl text-xs font-semibold bg-brand-500 text-white transition";
+      } else {
+        drawer.classList.add('translate-x-full');
+        navBtnDrawer.className = "px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition";
+      }
+    }
+
+    // Toggle Wi-Fi Simulator inside Drawer
+    function toggleSimWifi() {
+      wifiEnabled = !wifiEnabled;
+      const btn = document.getElementById('btnWifiToggle');
+      const dot = document.getElementById('tvHeaderDot');
+      const text = document.getElementById('tvHeaderNetName');
+
+      if (wifiEnabled) {
+        btn.className = "w-11 h-6 rounded-full bg-sky-500 p-0.5 transition-colors duration-200 relative flex items-center justify-end pr-1";
+        dot.className = "w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]";
+        text.textContent = "Wired Connection";
+        showToast("Connected: Wired Ethernet / Wi-Fi Active");
+      } else {
+        btn.className = "w-11 h-6 rounded-full bg-slate-700 p-0.5 transition-colors duration-200 relative flex items-center justify-start pl-1";
+        dot.className = "w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_6px_#fbbf24]";
+        text.textContent = "Offline / Disconnected";
+        showToast("Wi-Fi disabled");
+      }
+    }
+
+    // Change Background Mode (Solid Color vs Unsplash)
+    function changeBgMode(mode) {
+      currentBgMode = mode;
+      const container = document.getElementById('tvContainer');
+      if (mode === 'solid') {
+        container.style.background = 'radial-gradient(circle at 50% 20%, #202b39 0%, #151d27 100%)';
+        showToast("Switched to Solid Color Mode (Zero GPU overdraw)");
+      } else {
+        container.style.background = wallpapers[wallpaperIdx];
+        showToast("Switched to Unsplash Image Mode");
+      }
+    }
+
+    // Fetch New Wallpaper Simulated (1-Image Retention Policy)
+    let fetchCooldown = false;
+    function fetchNewWallpaperSimulated() {
+      if (fetchCooldown) {
+        showToast("Debounce active: please wait 3 seconds before fetching again");
+        return;
+      }
+      fetchCooldown = true;
+      const btn = document.getElementById('btnFetchWallpaper');
+      btn.innerText = "Fetching...";
+      btn.classList.add('opacity-70');
+
+      setTimeout(() => {
+        wallpaperIdx = (wallpaperIdx + 1) % wallpapers.length;
+        const container = document.getElementById('tvContainer');
+        const preview = document.querySelector('#wallpaperPreviewContainer > div');
+
+        if (currentBgMode === 'unsplash') {
+          container.style.background = wallpapers[wallpaperIdx];
+        }
+        if (preview) {
+          preview.style.background = wallpapers[wallpaperIdx];
+        }
+
+        btn.innerText = "Fetch New Image";
+        btn.classList.remove('opacity-70');
+        showToast("New image cached! Previous image overwritten (~1.8MB saved)");
+        setTimeout(() => { fetchCooldown = false; }, 2500);
+      }, 700);
+    }
+
+    // Change Selection Style (Classic Zoom vs Border Outline)
+    function changeSelectionStyle(style) {
+      currentSelectionStyle = style;
+      const circleZoom = document.querySelector('#radioZoomCircle span');
+      const circleZoomBox = document.getElementById('radioZoomCircle');
+      const circleOutline = document.querySelector('#radioOutlineCircle span');
+      const circleOutlineBox = document.getElementById('radioOutlineCircle');
+
+      if (style === 'zoom') {
+        circleZoom.classList.remove('opacity-0');
+        circleZoomBox.classList.add('border-emerald-500', 'bg-emerald-500/20');
+        circleOutline.classList.add('opacity-0');
+        circleOutlineBox.classList.remove('border-emerald-500', 'bg-emerald-500/20');
+        showToast("Selection Style: Classic Zoom active");
+      } else {
+        circleOutline.classList.remove('opacity-0');
+        circleOutlineBox.classList.add('border-emerald-500', 'bg-emerald-500/20');
+        circleZoom.classList.add('opacity-0');
+        circleZoomBox.classList.remove('border-emerald-500', 'bg-emerald-500/20');
+        showToast("Selection Style: Border Outline active");
+      }
+      applyFocusStyle();
+    }
+
+    // D-Pad Remote Navigation Simulation
+    const tiles = Array.from(document.querySelectorAll('.tv-tile'));
+    let currentFocus = 0;
+
+    function applyFocusStyle() {
+      tiles.forEach((t, i) => {
+        if (i === currentFocus && currentScreen === 'home') {
+          if (currentSelectionStyle === 'outline') {
+            t.classList.add('tv-focus-outline');
+            t.classList.remove('tv-focus-zoom');
+          } else {
+            t.classList.add('tv-focus-zoom');
+            t.classList.remove('tv-focus-outline');
+          }
+        } else {
+          t.classList.remove('tv-focus-outline', 'tv-focus-zoom');
+        }
+      });
+    }
+
+    tiles.forEach((t, idx) => {
+      t.addEventListener('mouseenter', () => {
+        currentFocus = idx;
+        applyFocusStyle();
+      });
+      t.addEventListener('click', () => {
+        currentFocus = idx;
+        applyFocusStyle();
+        const title = t.querySelector('span.tracking-wide').textContent;
+        showToast(`Launching ${title}...`);
+      });
+    });
+
+    // Remote Arrow Key Handler
+    window.addEventListener('keydown', (e) => {
+      if (['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown', 'Enter'].includes(e.key)) {
+        const demoSection = document.getElementById('interactive-demo');
+        const bounds = demoSection.getBoundingClientRect();
+        if (bounds.top > window.innerHeight || bounds.bottom < 0) return; // Only process when visible
+
+        if (currentScreen !== 'home') return;
+
+        e.preventDefault();
+        const cols = window.innerWidth >= 640 ? 4 : 2;
+
+        if (e.key === 'ArrowRight') {
+          currentFocus = (currentFocus + 1) % tiles.length;
+        } else if (e.key === 'ArrowLeft') {
+          currentFocus = (currentFocus - 1 + tiles.length) % tiles.length;
+        } else if (e.key === 'ArrowDown') {
+          if (currentFocus + cols < tiles.length) currentFocus += cols;
+        } else if (e.key === 'ArrowUp') {
+          if (currentFocus - cols >= 0) currentFocus -= cols;
+        } else if (e.key === 'Enter') {
+          const title = tiles[currentFocus].querySelector('span.tracking-wide').textContent;
+          showToast(`Remote D-Pad Selected: ${title}`);
+        }
+        applyFocusStyle();
+      }
+    });
+
+    // Toast and Clipboard Helpers
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2600);
+    }
+
+    function copyToClipboard(text, msg) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast(msg)).catch(() => fallbackCopy(text, msg));
+      } else {
+        fallbackCopy(text, msg);
+      }
+    }
+
+    function fallbackCopy(text, msg) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        showToast(msg);
+      } catch (e) {
+        showToast("Copied text!");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function copyDirectApkLink() {
+      const apkUrl = window.location.origin + window.location.pathname.replace('index.html', '') + 'clean-launcher.apk';
+      copyToClipboard(apkUrl, "Direct APK Link copied to clipboard!");
+    }
+
+    function copyDownloaderUrl() {
+      copyToClipboard("https://tinyurl.com/clean-tv", "Downloader short URL copied!");
+    }
+
+    function copyChecksum() {
+      const hash = document.getElementById('sha256Text').innerText.trim();
+      copyToClipboard(hash, "SHA-256 Checksum copied!");
+    }
+
+    // Sync Clock with Screenshot Date & Live Time
+    function initClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      const mins = String(now.getMinutes()).padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+
+      const timeEl = document.getElementById('tvHeaderTime');
+      if (timeEl) {
+        timeEl.textContent = `${hours}:${mins} ${ampm}`;
+      }
+    }
+    initClock();
+    setInterval(initClock, 15000);
+  </script>
 </body>
 </html>
