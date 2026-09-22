@@ -85,5 +85,4 @@ Sideload the APK onto your television or streaming box in less than 3 minutes:
 ### Option A: Downloader App (Fastest)
 1. Install **Downloader by AFTVnews** from the TV Google Play Store.
 2. Open Downloader and enter the direct APK URL:
-   ```text
-   [https://github.com/ajoykarmakar/tools/raw/refs/heads/main/releases/clean-launcher-v1.0.0.apk](https://github.com/ajoykarmakar/tools/raw/refs/heads/main/releases/clean-launcher-v1.0.0.apk)
+ https://github.com/ajoykarmakar/tools/raw/refs/heads/main/releases/clean-launcher-v1.0.0.apk
