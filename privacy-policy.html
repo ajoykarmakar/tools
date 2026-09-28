@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Clean Launcher</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #E0E0E0;
+            background-color: #1A1D20;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1, h2 {
+            color: #FFFFFF;
+        }
+        h1 {
+            border-bottom: 1px solid #2D3135;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        p {
+            margin-bottom: 16px;
+        }
+        ul {
+            margin-bottom: 24px;
+            background-color: #2D3135;
+            padding: 24px 24px 24px 48px;
+            border-radius: 12px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        .permission {
+            font-weight: 600;
+            color: #00FFFF;
+        }
+        a {
+            color: #00FFFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Privacy Policy for Clean Launcher</h1>
+    <p><strong>Effective Date:</strong> September 28, 2026</p>
+
+    <p>This Privacy Policy explains how Clean Launcher ("the App") handles information, data, and system permissions when installed on your Android TV device. The App is designed to function as a fast, lightweight home screen replacement.</p>
+
+    <h2>1. Device Permissions and Data Access</h2>
+    <p>To provide its core functionality, the App requires specific Android system permissions as declared in its manifest. Here is a transparent breakdown of what the App requests and why:</p>
+    
+    <ul>
+        <li><span class="permission">Limited App Visibility (Queries):</span> To protect your privacy, the App does not request broad access to scan every package installed on your TV. Instead, it explicitly restricts its visibility to only query applications that are registered as runnable TV or Mobile apps. This strictly limits the App to seeing only the software needed to populate your home screen grid.</li>
+        <li><span class="permission">Usage Data (PACKAGE_USAGE_STATS):</span> The App requests access to package usage statistics. This is utilized locally to determine which applications you use most frequently, enabling features such as a "Recent Apps" row or optimizing the memory allocation for your most-used entertainment apps.</li>
+        <li><span class="permission">Location Access (ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION):</span> The App requests access to location data. In the Android operating system, location permissions are strictly required to scan for local Wi-Fi networks (SSIDs) and establish direct local area network connections. This may also be used to provide localized home screen utilities, such as weather widgets.</li>
+        <li><span class="permission">Network and Wi-Fi State (INTERNET, ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE):</span> These permissions are necessary to check your TV's current network connection status, manage local network file transfers, and load online assets for widgets.</li>
+        <li><span class="permission">Boot Completed (RECEIVE_BOOT_COMPLETED):</span> This allows the App to initialize its background services the moment your television finishes powering on, ensuring your custom home screen is instantly ready to use.</li>
+    </ul>
+
+    <h2>2. Data Collection and Transmission</h2>
+    <p>All permissions requested are utilized locally on your device's hardware. The App does not actively collect, harvest, or transmit your precise location, app usage history, or personal identification to external servers for advertising, marketing, or tracking purposes.</p>
+
+    <h2>3. Third-Party Services</h2>
+    <p>Clean Launcher is built to be free of bloatware. It does not bundle third-party advertising frameworks, tracking SDKs, or external analytics engines. Any network requests made by the App are strictly related to user-initiated actions or retrieving data for specific home screen widgets you have enabled.</p>
+
+    <h2>4. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy occasionally to reflect changes in our software practices or mandatory Android operating system policy updates. We will notify you of any modifications by updating the "Effective Date" at the top of this document.</p>
+
+    <h2>5. Contact Us</h2>
+    <p>If you have any questions or concerns about this Privacy Policy, the permissions requested, or how your data is handled on your device, please contact the developer at: <strong>[Insert Contact Email / Website]</strong></p>
+
+</body>
+</html>
